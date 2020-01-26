@@ -4,9 +4,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Objects;
 import java.util.StringTokenizer;
 
 public class Reader {
+
+    public void importer() throws IOException {
+        Path filePath = Paths.get("./sample.csv");
+        Objects.requireNonNull(filePath);
+        RecordImportDto dto = readCsv(filePath);
+        
+    }
 
     public RecordImportDto readCsv(Path filePath){
         RecordImportDto dtos = new RecordImportDto();
